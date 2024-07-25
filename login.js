@@ -29,3 +29,13 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         errorMessage.textContent = 'Invalid username or password.';
     }
 });
+
+// Prevent page from scrolling up when input is focused
+document.getElementById('username').addEventListener('focus', function(event) {
+    event.preventDefault();
+    window.scrollTo(0, 0);
+});
+document.getElementById('password').addEventListener('focus', function(event) {
+    event.preventDefault();
+    window.scrollTo(0, 0);
+});
