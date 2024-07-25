@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const questionNumber = document.getElementById('question-number');
     const questionText = document.getElementById('question-text');
     const answerInput = document.getElementById('answer');
     const nextButton = document.getElementById('next');
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentQuestionIndex = 0;
 
     function showQuestion() {
+        questionNumber.textContent = `Pertanyaan ${currentQuestionIndex + 1}`;
         questionText.textContent = questions[currentQuestionIndex];
         answerInput.value = '';
         feedbackContainer.textContent = '';
