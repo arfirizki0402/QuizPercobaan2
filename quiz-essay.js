@@ -16,17 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
         questionText.textContent = questions[currentQuestionIndex];
     }
 
-    function checkAnswer() {
-        let correctAnswers = ["Paris", "Soekarno", "Jupiter"];
-        if (answerInput.value.trim().toLowerCase() === correctAnswers[currentQuestionIndex].toLowerCase()) {
-            feedbackContainer.textContent = "Jawaban benar!";
-        } else {
-            feedbackContainer.textContent = "Jawaban salah. Coba lagi.";
-        }
+    function handleAnswerSubmission() {
+        feedbackContainer.textContent = `Jawaban telah disimpan: ${answerInput.value}`;
+        answerInput.value = '';
     }
 
     submitButton.addEventListener('click', function() {
-        checkAnswer();
+        handleAnswerSubmission();
+        // Optionally move to the next question or keep the current question
+        // currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+        // showQuestion();
     });
 
     showQuestion();
