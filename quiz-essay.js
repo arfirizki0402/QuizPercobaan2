@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const questionText = document.getElementById('question-text');
     const answerInput = document.getElementById('answer');
-    const submitButton = document.getElementById('submit');
+    const nextButton = document.getElementById('next');
     const feedbackContainer = document.getElementById('feedback');
 
     const questions = [
@@ -14,18 +14,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showQuestion() {
         questionText.textContent = questions[currentQuestionIndex];
-    }
-
-    function handleAnswerSubmission() {
-        feedbackContainer.textContent = `Jawaban telah disimpan: ${answerInput.value}`;
         answerInput.value = '';
+        feedbackContainer.textContent = '';
     }
 
-    submitButton.addEventListener('click', function() {
-        handleAnswerSubmission();
-        // Optionally move to the next question or keep the current question
-        // currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
-        // showQuestion();
+    function handleNextQuestion() {
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            showQuestion();
+        } else {
+            feedbackContainer.textContent = 'Anda telah menyelesaikan semua pertanyaan.';
+            nextButton.disabled = true;
+        }
+    }
+
+    nextButton.addEventListener('click', function() {
+        handleNextQuestion();
     });
 
     showQuestion();
