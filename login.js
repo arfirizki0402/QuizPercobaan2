@@ -24,7 +24,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     if (user) {
         alert('Login successful!');
         // Redirect to the quiz page or another page
-        window.location.href = 'quiz.html';
+        window.location.href = 'quiz-essay.html';
     } else {
         errorMessage.textContent = 'Invalid username or password.';
     }
