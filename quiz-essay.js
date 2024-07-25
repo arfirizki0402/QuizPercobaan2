@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Apa ibu kota dari Prancis?",
         "Siapa presiden pertama Indonesia?",
         "Apa nama planet terbesar di tata surya?"
+        "Kontol berwarna apa?"
     ];
 
     let currentQuestionIndex = 0;
