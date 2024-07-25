@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     let currentQuestionIndex = 0;
+    const answers = [];
 
     function showQuestion() {
         questionNumber.textContent = `Pertanyaan ${currentQuestionIndex + 1}`;
@@ -33,12 +34,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleNextQuestion() {
+        // Save the current answer
+        answers.push(answerInput.value);
+
         if (currentQuestionIndex < questions.length - 1) {
             currentQuestionIndex++;
             showQuestion();
         } else {
-            feedbackContainer.textContent = 'Anda telah menyelesaikan semua pertanyaan.';
-            nextButton.disabled = true;
+            localStorage.setItem('quizAnswers', JSON.stringify(answers));
+            window.location.href = 'submit-answers.html';
         }
     }
 
