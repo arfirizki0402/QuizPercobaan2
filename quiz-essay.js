@@ -7,7 +7,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const questions = [
         "Apa ibu kota dari Prancis?",
         "Siapa presiden pertama Indonesia?",
-        "Apa nama planet terbesar di tata surya?"
+        "Apa nama planet terbesar di tata surya?",
+        "Apa bahasa resmi Brasil?",
+        "Siapa penulis novel '1984'?",
+        "Di mana Tembok Besar China berada?",
+        "Apa mata uang Jepang?",
+        "Siapa penemu telepon?",
+        "Apa ibu kota Italia?",
+        "Berapa banyak benua di dunia?",
+        "Siapa yang menulis 'Hamlet'?",
+        "Apa yang merupakan simbol kimia untuk air?",
+        "Siapa yang pertama kali menginjakkan kaki di bulan?",
+        "Apa warna primer dalam seni rupa?",
+        "Siapa presiden Amerika Serikat saat ini?"
     ];
 
     let currentQuestionIndex = 0;
